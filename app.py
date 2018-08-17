@@ -56,6 +56,7 @@ def home():
         return render_template("index.html",requestnumber = request_no, data = data, district = keyword1)   
     r = requests.get('https://byw1s98hik.execute-api.ap-south-1.amazonaws.com/dev/androidapp/get')
     data = r.json()
+    print(data)
     request_no = data['Count']
     return render_template("index.html",requestnumber = request_no, data = data)
 
