@@ -92,7 +92,7 @@
                                     <small class="font-bold">Date: {{change_epoch(data['Items'][i]['TimeIndex'])}} </small>
                                 </div>
                                 <h4 style="margin: 5px 0"> {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}}&nbsp;
-                                <a class="pure-button button-small" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
+                                <a class="pure-button button-small border-button" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
                                 </h4>
                                 <hr>
                                 <div class="pure-g">
@@ -106,7 +106,8 @@
 
                                         {% endif %}
 
-                                        <a class="pure-button button-small" href="whatsapp://send?text={{data['Items'][i]['number_of_people']}} people from {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}} 
+                                        <a class="pure-button
+						  button-small border-button" href="whatsapp://send?text={{data['Items'][i]['number_of_people']}} people from {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}} 
                                         
                                         requested rescue at {{change_epoch(data['Items'][i]['TimeIndex'])}}
 
