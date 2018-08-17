@@ -92,7 +92,7 @@
                                     <small class="font-bold">Date: {{change_epoch(data['Items'][i]['TimeIndex'])}} </small>
                                 </div>
                                 <h4 style="margin: 5px 0"> {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}}&nbsp;
-                                <a class="pure-button button-small" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
+                                
                                 <br>
                                 Contact No: {{data['Items'][i]['ContactNumber']}}
 
@@ -100,6 +100,8 @@
                                     <br>
                                     Accepted by: {{data['Items'][i]['AcceptedBy']}}
                                 {% endif %}
+                                <br>
+                                <a class="pure-button button-small" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
                                 </h4>
                                 <hr>
                                 <div class="pure-g">
@@ -119,7 +121,9 @@
 
                                          Location:https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}                                                                                                       
 
+                                        Contact No. {{data['Items'][i]['ContactNumber']}}
 
+                                        
                                          Here’s a link to check whether they are rescued or to rescue them. http://www.rescueapp.in/" data-action="share/whatsapp/share">
                                                 <i class="fa fa-share-square-o"></i>
                                             </a>
