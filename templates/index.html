@@ -29,8 +29,8 @@
             function myFunction(timestamp) {
         
                 if (confirm("Are you sure you want to Accept?")) {
-                    
-                    window.location = "accept/"+timestamp;
+                    var no = prompt("Enter Your Phone Number");
+                    window.location = "accept/"+timestamp+'&'+no;
                 } 
                
             }
@@ -92,11 +92,20 @@
                                     <small class="font-bold">Date: {{change_epoch(data['Items'][i]['TimeIndex'])}} </small>
                                 </div>
                                 <h4 style="margin: 5px 0"> {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}}&nbsp;
+                                
+                                <br>
+                                Contact No: <a href="tel:{{data['Items'][i]['ContactNumber']}}">{{data['Items'][i]['ContactNumber']}}</a>
+
+                                {% if data['Items'][i]['status_now'] == "Accepted" %}
+                                    <br>
+                                    Accepted by: <a href="tel:{{data['Items'][i]['AcceptedBy']}}">{{data['Items'][i]['AcceptedBy']}}</a>
+                                {% endif %}
+                                <br>
                                 <a class="pure-button button-small border-button" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
                                 </h4>
                                 <hr>
                                 <div class="pure-g">
-                                    <div class="pure-u-1-2 primary-text">{{data['Items'][i]['number_of_people']}} People</div>
+                                    <div class="pure-u-1-2 primary-text">{{data['Items'][i]['number_of_people']}} People </div>
                                     <div class="pure-u-1-2 text-right">
 
                                         {% if data['Items'][i]['status_now'] == "Accepted" %}
@@ -111,9 +120,12 @@
                                         
                                         requested rescue at {{change_epoch(data['Items'][i]['TimeIndex'])}}
 
-                                         Location:https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}                                                                                                        
+                                         Location:https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}                                                                                                       
 
-
+                                        Contact No. {{data['Items'][i]['ContactNumber']}}
+                                        
+                                        Text this person on Whatsapp:  https://wa.me/91{{data['Items'][i]['ContactNumber']}}
+                                        
                                          Here’s a link to check whether they are rescued or to rescue them. http://www.rescueapp.in/" data-action="share/whatsapp/share">
                                                 <i class="fa fa-share-square-o"></i>
 						<span>Share</span>
