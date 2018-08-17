@@ -54,9 +54,9 @@ def date_processor():
         ts = int(epoch)
         ts = ts/1000
        
-        return datetime.utcfromtimestamp(ts).strftime('%Y-%m-%d %I:%M %p')
+        return datetime.fromtimestamp(ts).strftime('%Y-%m-%d %I:%M %p')
     return dict(change_epoch=change_epoch)
     
 if __name__=='__main__':
 
-	app.run(threaded=True,host="0.0.0.0",port=80) #Debugger is set to 1 for testing and overriding the default port to http port
+	app.run(threaded=True,host="0.0.0.0",port=80,debug=True) #Debugger is set to 1 for testing and overriding the default port to http port
