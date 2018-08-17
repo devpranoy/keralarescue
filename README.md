@@ -15,8 +15,8 @@ Now you can install Flask using:
 
 Once this is done, you can start the app by running
 
-`flask run`
+sudo python app.py
 
-which should start the server on port 5000 which can be accessed by going to:
+which should start the server on port 80 which can be accessed by going to:
 
-http://localhost:5000/
+http://0.0.0.0
