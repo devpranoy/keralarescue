@@ -29,7 +29,7 @@ def home1():
         r=requests.post(url, data=json.dumps(data), headers=headers)
         data = r.json()
         request_no = data['Count']
-        return render_template("index.html",requestnumber = request_no, data = data)
+        return render_template("index.html",requestnumber = request_no, data = data, district = keyword1)
 
         
     r = requests.get('https://byw1s98hik.execute-api.ap-south-1.amazonaws.com/dev/androidapp/get')
@@ -47,7 +47,7 @@ def home():
         r=requests.post(url, data=json.dumps(data), headers=headers)
         data = r.json()
         request_no = data['Count']
-        return render_template("index.html",requestnumber = request_no, data = data)   
+        return render_template("index.html",requestnumber = request_no, data = data, district = keyword1)   
     r = requests.get('https://byw1s98hik.execute-api.ap-south-1.amazonaws.com/dev/androidapp/get')
     data = r.json()
     request_no = data['Count']
