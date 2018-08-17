@@ -16,3 +16,7 @@ Now you can install Flask using:
 Once this is done, you can start the app by running
 
 `flask run`
+
+which should start the server on port 5000 which can be accessed by going to:
+
+http://localhost:5000/
