@@ -47,6 +47,10 @@ label {
   text-align: center;
 }
 
+h4 {
+    margin: 10px 0;
+}
+
 /*
  * -- PURE FORM STYLES --
  * Style the form inputs and labels
@@ -70,7 +74,7 @@ label {
  * I want my pure-button elements to look a little different
  */
 .button-primary {
-  background-color: #1f8dd6;
+  background-color: #5373DC;
   color: white;
 }
 
@@ -90,7 +94,7 @@ hr {
 }
 
 .primary-text {
-    color: #1f8dd6;
+    color: #5373DC;
 }
 
 
@@ -172,7 +176,7 @@ hr {
 .card {
   background: #fff;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
 
 .card-1 {
@@ -185,11 +189,19 @@ hr {
 }
 
 .button-xsmall {
+    border-radius: 4px;
   font-size: 70%;
 }
 
 .button-small {
+  border-radius: 4px;
   font-size: 85%;
+}
+
+.border-button {
+  background: #F7F7F7;
+  box-sizing: border-box;
+  border: 2px solid #E8E8E8;
 }
 
 .button-large {
