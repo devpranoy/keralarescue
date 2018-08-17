@@ -64,4 +64,4 @@ def date_processor():
     
 if __name__=='__main__':
 
-	app.run(threaded=True,host="0.0.0.0",port=80,debug=True) #Debugger is set to 1 for testing and overriding the default port to http port
+	app.run(threaded=True,host="0.0.0.0",port=80) #Debugger is set to 1 for testing and overriding the default port to http port
