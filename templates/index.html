@@ -94,11 +94,11 @@
                                 <h4 style="margin: 5px 0"> {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}}&nbsp;
                                 
                                 <br>
-                                Contact No: {{data['Items'][i]['ContactNumber']}}
+                                Contact No: <a href="tel:{{data['Items'][i]['ContactNumber']}}">{{data['Items'][i]['ContactNumber']}}</a>
 
                                 {% if data['Items'][i]['status_now'] == "Accepted" %}
                                     <br>
-                                    Accepted by: {{data['Items'][i]['AcceptedBy']}}
+                                    Accepted by: <a href="tel:{{data['Items'][i]['AcceptedBy']}}">{{data['Items'][i]['AcceptedBy']}}</a>
                                 {% endif %}
                                 <br>
                                 <a class="pure-button button-small" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
