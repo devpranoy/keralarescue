@@ -24,6 +24,17 @@
     <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="../static/assets/css/layouts/style.css">
     <!--<![endif]-->
+
+    <script>
+            function myFunction(timestamp) {
+        
+                if (confirm("Are you sure you want to Accept?")) {
+                    
+                    window.location = "accept/"+timestamp;
+                } 
+               
+            }
+            </script>
 </head>
 
 <body>
@@ -46,7 +57,7 @@
                 <form method = "POST">
                 <select id="state" name ="data">
                     
-                        <option>Alappuzha</option>
+                    <option>Alappuzha</option>
                     <option>Ernakulam</option>
                     <option>Idukki</option>
                     <option>Kannur</option>
@@ -87,7 +98,14 @@
                                 <div class="pure-g">
                                     <div class="pure-u-1-2 primary-text">{{data['Items'][i]['number_of_people']}} People</div>
                                     <div class="pure-u-1-2 text-right">
-                                        <a class="pure-button button-small button-primary" href="#">Accept</a>
+
+                                        {% if data['Items'][i]['status_now'] == "Accepted" %}
+                                        <button style="background-color: #4CAF50;color:white;" class="button-success pure-button button-small" >Accepted</button>
+                                        {% else %}
+                                        <button class="pure-button button-small button-primary" onclick="myFunction({{ data['Items'][i]['TimeIndex'] }})">Accept</button>
+
+                                        {% endif %}
+
                                         <a class="pure-button button-small" href="#">
                                                 <i class="fa fa-share-square-o"></i>
                                             </a>
