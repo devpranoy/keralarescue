@@ -10,12 +10,18 @@ app = Flask(__name__)
 
 @app.route('/accept/<string:timeindex>',methods=['GET','POST'])
 def accept(timeindex):
+    print(timeindex)
+    timeindexlist = timeindex.split('&')
+    if timeindexlist[1] == 'null':
+        
+        return redirect(url_for('home'))
+
     url = 'https://byw1s98hik.execute-api.ap-south-1.amazonaws.com/dev/webapp/accepted'
-    data = {'TimeIndex':timeindex}
+    data = {'TimeIndex':timeindexlist[0],'AcceptedBy':timeindexlist[1]}
+    
     headers = {'content-type': 'application/json'}
     r=requests.post(url, data=json.dumps(data), headers=headers)
     data = r.json()
-    print(data)
     return redirect(url_for('home'))
 
 
