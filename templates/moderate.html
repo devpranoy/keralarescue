@@ -35,6 +35,17 @@
                
             }
             </script>
+             <script>
+                    function deletedata(timestamp) {
+                
+                        if (confirm("Are you sure you want to Delete?")) {
+                            
+                            window.location = "moderatordelete/"+timestamp
+                        } 
+                       
+                    }
+                    </script>
+            
 </head>
 
 <body>
@@ -108,14 +119,12 @@
                                     <div class="pure-u-1-2 primary-text">{{data['Items'][i]['number_of_people']}} People </div>
                                     <div class="pure-u-1-2 primary-text">Comment: {{data['Items'][i]['Current_Info']}}</div>
                                     <div class="pure-u-1-2 text-right">
-
+                                            <button style="background-color: rgb(235, 74, 74);color:white;" class="button-success pure-button button-small" onclick="deletedata({{ data['Items'][i]['TimeIndex'] }})" >Delete</button>
                                         {% if data['Items'][i]['status_now'] == "Accepted" %}
                                         <button style="background-color: #4CAF50;color:white;" class="button-success pure-button button-small" onclick="myFunction({{ data['Items'][i]['TimeIndex'] }})" >Add A Comment</button>
                                         {% else %}
                                         <button class="pure-button button-small button-primary" onclick="myFunction({{ data['Items'][i]['TimeIndex'] }})">Add A Comment</button>
-
                                         {% endif %}
-
                                         <a class="pure-button
 						  button-small border-button" href="whatsapp://send?text={{data['Items'][i]['number_of_people']}} people from {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}} 
                                         

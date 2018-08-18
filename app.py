@@ -99,6 +99,15 @@ def remark(timeindex):
     r=requests.post(url, data=json.dumps(data), headers=headers)
     data = r.json()
     return redirect(url_for('moderator'))
+@app.route('/moderatordelete/<string:timeindex>',methods=['GET','POST'])
+def delete(timeindex):
+    print(timeindex)
+    url = 'https://byw1s98hik.execute-api.ap-south-1.amazonaws.com/dev/androidapp/remove-request-from-timeindex'
+    data = {'TimeIndex':timeindex}
+    
+    headers = {'content-type': 'application/json'}
+    r=requests.post(url, data=json.dumps(data), headers=headers)
+    return redirect(url_for('moderator'))
 
 
 
