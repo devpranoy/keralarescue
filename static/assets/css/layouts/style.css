@@ -14,6 +14,21 @@ body {
   background-color: #eae8f3;
   font-size: 13px;
 }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  text-decoration:none;
+  height: 30px;
+}
+.disclaimer {
+  margin-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 h1,
 h2,
