@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kerala Rescure Web">
+    <title>Kerala Rescue</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    <!--<![endif]-->
+
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+    <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/layouts/marketing-old-ie.css">
+        <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="../static/assets/css/layouts/style.css">
+    <!--<![endif]-->
+
+    <script>
+            function myFunction(timestamp) {
+        
+                if (confirm("Are you sure you want to Comment?")) {
+                    var no = prompt("Enter Comment ");
+                    window.location = "moderatorcomment/"+timestamp+'&'+no;
+                } 
+               
+            }
+            </script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" style="text-transform: none" href="">
+                <i class="fa fa-circle primary-text"></i> Latest Rescue Requests
+            </a>
+            <a class="pure-menu-heading" style="text-transform: none" href="https://play.google.com/store/apps/details?id=in.co.iodev.keralarescue">
+                    <i class="fa fa-android"></i> Download the Android App
+                </a>
+        </div>
+    </div>
+
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head font-bold" id="requestCount">{{requestnumber}} Requests Remaining</h1>
+            <div class="pure-form">
+                <form method = "POST">
+                <select id="state" name ="data">
+                    
+                    <option {% if district=="Alappuzha" %} selected="selected"{% endif %}>Alappuzha</option>
+                    <option {% if district=="Ernakulam" %} selected="selected"{% endif %}>Ernakulam</option>
+                    <option {% if district=="Idukki" %} selected="selected"{% endif %}>Idukki</option>
+                    <option {% if district=="Kannur" %} selected="selected"{% endif %}>Kannur</option>
+                    <option {% if district=="Kasaragod" %} selected="selected"{% endif %}>Kasaragod</option>
+                    <option {% if district=="Kollam" %} selected="selected"{% endif %}>Kollam</option>
+                    <option {% if district=="Kottayam" %} selected="selected"{% endif %}>Kottayam</option>
+                    <option {% if district=="Kozhikode" %} selected="selected"{% endif %}>Kozhikode</option>
+                    <option {% if district=="Malappuram" %} selected="selected"{% endif %}>Malappuram</option>
+                    <option {% if district=="Palakkad" %} selected="selected"{% endif %}>Palakkad</option>
+                    <option {% if district=="Pathanamthitta" %} selected="selected"{% endif %}>Pathanamthitta</option>
+                    <option {% if district=="Thiruvananthapuram" %} selected="selected"{% endif %}>Thiruvananthapuram</option>
+                    <option {% if district=="Thrissur" %} selected="selected"{% endif %}>Thrissur</option>
+                    <option {% if district=="Wayanad" %} selected="selected"{% endif %}>Wayanad</option>
+                </select>
+                &nbsp;
+                <button type="submit" value="Search" class="pure-button button-small button-primary" >Submit</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content">
+
+            <div class="pure-g">
+                <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-sm-1-3 pure-u-lg-1-3 --no-paddings">
+                </div>
+                <div class="l-box pure-u-1 pure-u-md-1-3  pure-u-sm-1-3 pure-u-lg-1-3 --no-paddings" id="rescueList">
+                    {% for i in range(0,data['Count']): %}
+                        <div class="card card-1 m-b-sm"> 
+                                <div class="small-date-time">
+                                    <small class="font-bold">Date: {{change_epoch(data['Items'][i]['TimeIndex'])}} </small>
+                                </div>
+                                <h4 style="margin: 5px 0"> {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}}&nbsp;
+                                
+                                <br>
+                                Contact No: <a href="tel:{{data['Items'][i]['ContactNumber']}}">{{data['Items'][i]['ContactNumber']}}</a>
+
+                                {% if data['Items'][i]['status_now'] == "Accepted" %}
+                                    <br>
+                                    Accepted by: <a href="tel:{{data['Items'][i]['AcceptedBy']}}">{{data['Items'][i]['AcceptedBy']}}</a>
+                                {% endif %}
+                                <br>
+                                <a class="pure-button button-small border-button" href="https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}">View on maps</a>
+                                </h4>
+                                <hr>
+                                <div class="pure-g">
+                                    <div class="pure-u-1-2 primary-text">{{data['Items'][i]['number_of_people']}} People </div>
+                                    <div class="pure-u-1-2 primary-text">Comment: {{data['Items'][i]['Current_Info']}}</div>
+                                    <div class="pure-u-1-2 text-right">
+
+                                        {% if data['Items'][i]['status_now'] == "Accepted" %}
+                                        <button style="background-color: #4CAF50;color:white;" class="button-success pure-button button-small" onclick="myFunction({{ data['Items'][i]['TimeIndex'] }})" >Add A Comment</button>
+                                        {% else %}
+                                        <button class="pure-button button-small button-primary" onclick="myFunction({{ data['Items'][i]['TimeIndex'] }})">Add A Comment</button>
+
+                                        {% endif %}
+
+                                        <a class="pure-button
+						  button-small border-button" href="whatsapp://send?text={{data['Items'][i]['number_of_people']}} people from {{data['Items'][i]['Locality']}} {{data['Items'][i]['District']}} 
+                                        
+                                        requested rescue at {{change_epoch(data['Items'][i]['TimeIndex'])}}
+
+                                         Location:https://www.google.com/maps/place/{{data['Items'][i]['lattitude']}},{{data['Items'][i]['longitude']}}                                                                                                       
+
+                                        Contact No. {{data['Items'][i]['ContactNumber']}}
+                                        
+                                        Text this person on Whatsapp:  https://wa.me/91{{data['Items'][i]['ContactNumber']}}
+                                        
+                                         Here’s a link to check whether they are rescued or to rescue them. http://www.rescueapp.in/" data-action="share/whatsapp/share">
+                                                <i class="fa fa-share-square-o"></i>
+						<span>Share</span>
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<script src="../static/assets/js/jQuery-ajax.min.js"></script>
+<script src="../static/assets/js/moment.min.js"></script>
+
+<script src="../static/assets/js/service.js"></script>
+
+</body>
+
+</html>
