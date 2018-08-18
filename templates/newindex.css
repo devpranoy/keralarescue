@@ -1,0 +1,229 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+    font-family: Roboto, Helvetica, Avenir, Verdana, sans-serif;
+    background: #F7F7FB;
+}
+
+#header {
+    background: #3A78E2;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#header h2 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    margin-bottom: 1rem;
+}
+
+#header label {
+
+    text-align: left;
+    padding-bottom: 0.5rem;
+    display: block;
+    font-weight: 400;
+    font-size: 0.75em;
+    
+}
+
+#header form {
+    padding-bottom: 1em;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+#header form fieldset {
+	text-align: left;
+}
+
+#header form > fieldset, #header form > input {
+
+    display: inline-block;
+    margin:  0 0.5em;
+    
+}
+
+#listing {
+	width: 80%;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+#sorter {
+	color: #696969;
+	font-weight: bold;
+	font-size: 1.25rem;
+	display: table;
+	width: 100%;
+}
+
+#sorter .item {
+	 color: #3A78E2;
+
+}
+
+#sorter .span, #sorter .selector {
+	display: table-cell;
+	width: 50%;
+}
+
+#sorter .selector {
+	position: relative;
+}
+
+#sorter select {
+	position: absolute;
+	right: 0;
+
+}
+
+.card {
+	background: white;
+	padding: 0 1rem;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+	margin: 1em 0;
+}
+
+.location-and-number, .quantity-and-notes {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid rgba(0,0,0,0.05);
+
+}
+
+.location-and-number {
+		margin-bottom: 1rem;;
+}
+
+.location, .phone-number, .quantity, .notes {
+	display: inline-block;
+}
+
+.location, .quantity {
+	padding-right: 15%;
+}
+
+.location, .phone-number {
+	margin-top: 1em;
+}
+
+.location .label, .phone-number .label {
+
+text-transform: uppercase;
+font-weight: bold;
+font-size: 0.75em;
+margin-bottom: 0.75rem;
+
+}
+
+.location .value {
+	color: black;
+	font-weight: bold;
+	font-size: 1.45rem;
+}
+
+.phone-number .value {
+	color: #3A78E2;
+	font-weight: bold;
+	font-size: 1.15rem;
+}
+
+.quantiy, .notes {
+	margin-top: 1rem;
+}
+
+.quantity .label, .notes .label {
+
+font-weight: bold;
+font-size: 0.875em;
+margin-bottom: 0.75rem;
+
+}
+
+.buttons {
+	padding-bottom: 1rem;
+}
+
+
+.buttons button {
+	appearance: none;
+	border: 0;
+	padding: 0.75rem 1rem;
+	border-radius: 4px;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: table-cell;
+	margin-top: 5px;
+}
+
+.view-map {
+	background: #3DA1EE;
+	color: white;
+	margin-right: 10px;
+
+}
+
+.accept-request {
+
+	background: #3A78E2;
+	color:  white;
+	margin-right: 10px;
+
+}
+
+.share-button {
+	color: #3A78E2;
+	background: #EBEBEB;
+}

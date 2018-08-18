@@ -1,45 +1,60 @@
-<html>
-    <head>
-<title>
-    rescueapp
-</title>
-    </head>
-    <body>
-        <div>
-            Kerala Flood Rescue - Food and Material Requests
-            <hr>
-            <div>
-            District &nbsp; &nbsp; &nbsp; &nbsp; Category of Request
-            </div>
-            <form>
-                <select name = "district">
-                   <option>Alappuzha</option>
-                </select>
-                <select name = "type">
-                        <option>Food + Water</option>
-                     </select>
-                    <input type="submit" Value="Submit"></input>
-            </form>
-        </div>
-        <div>
-            <div>
-                1 Request for Food and Water &nbsp; &nbsp; &nbsp; &nbsp; 
-                    <select name = "sort">
-                        <option>Sort by Latest</option>
-                     </select>
-            </div>
-            <div>
-                <br>
-                REQUESTED FROM  &nbsp; &nbsp;&nbsp;&nbsp; PHONE NUMBER<br>
-                Panamaram Wayanad  &nbsp; &nbsp;&nbsp;&nbsp; 898989889898, 83493489348<br>
-                <br><br>
-                Quantity &nbsp;&nbsp;&nbsp;&nbsp; Extra notes <br>
-                10 Bottles and food for 10 people &nbsp;&nbsp;&nbsp; Food for 10 people among which 3 are kids <br>
-                <br><br>
-                <button> View on Map </button> &nbsp; &nbsp;&nbsp; <button> Accept Request </button> &nbsp; &nbsp;&nbsp; <button> share icon </button>
-            </div>
-        
-
-        </div>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RescueApp</title>
+    <link href="newindex.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+      <h2>Kerala Flood Rescue - Food and Material Requests</h2>
+      <form>
+	<fieldset>
+	  <label for = "district">District</label>
+	  <select id  = "district" name = "district">
+	    <option>Alappuzha</option>
+	  </select>
+	</fieldset>
+	<fieldset>
+	  <label for = "type">Category of Request</label>
+	  <select id = "type"  name = "type">
+	    <option>Food + Water</option>
+	  </select>
+	</fieldset>
+	<input type="submit" Value="Submit"/>
+      </form>
+    </div>
+    <div id="listing">
+      <div id="sorter">
+	<span class="request"><span class="count">1</span> Request for <span class="item">Food and Water</span></span>
+	<span class="selector"><select name="sort"><option>Sort by Latest</option></select></span>
+      </div>
+      <div class="card">
+	<div  class="location-and-number">
+	  <div class="location">
+	    <p class="label">Requested From</p>
+	    <p class="value">Panamaram Wayanad</p>
+	  </div>
+	  <div class="phone-number">
+	    <p class="label">Phone Number</p>
+	    <p class="value">898989889898, 83493489348
+	    </p>
+	  </div>
+	</div>
+	<div class="quantity-and-notes">
+	  <div class="quantity">
+	    <p class="label">Quantity</p>
+	    <p class="value">10 Bottles and food for 10 people</p>
+	  </div>
+	  <div class="notes">
+	    <p class="label">Extra notes</p>
+	    <p class="value">Food for 10 people among which 3 are kids</p>
+	  </div>
+	</div>
+	<div class="buttons">
+	  <button class="view-map">View on Map</button><button class="accept-request">Accept Request</button><button class="share-button">Share</button>
+	</div>
+      </div>
+    </div>
+  </body>
 </html>
