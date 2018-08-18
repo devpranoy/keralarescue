@@ -68,6 +68,11 @@ def date_processor():
         return datetime.fromtimestamp(ts).strftime('%Y-%m-%d %I:%M %p')
     return dict(change_epoch=change_epoch)
 
+@app.route('/disclaimer', methods=['GET','POST']) #landing page
+def disclaimer():
+    return render_template("disclaimer.html")
+
+
 @app.route('/moderator', methods=['GET','POST']) #landing page
 def moderator():
     if request.method == 'POST':
