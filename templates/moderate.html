@@ -106,7 +106,8 @@
                                 
                                 <br>
                                 Contact No: <a href="tel:{{data['Items'][i]['ContactNumber']}}">{{data['Items'][i]['ContactNumber']}}</a>
-
+                                <br>
+                                Alternate No: <a href="tel:{{data['Items'][i]['AlternateContactNumber']}}">{{data['Items'][i]['AlternateContactNumber']}}</a>
                                 {% if data['Items'][i]['status_now'] == "Accepted" %}
                                     <br>
                                     Accepted by: <a href="tel:{{data['Items'][i]['AcceptedBy']}}">{{data['Items'][i]['AcceptedBy']}}</a>
