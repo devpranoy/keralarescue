@@ -91,7 +91,7 @@ body {
 #header form > fieldset, #header form > input {
 
     display: inline-block;
-    margin:  0 1em;
+    margin:  0 0.5em;
     
 }
 
@@ -104,7 +104,9 @@ body {
 #sorter {
 	color: #696969;
 	font-weight: bold;
-	font-size: 1.25rem
+	font-size: 1.25rem;
+	display: table;
+	width: 100%;
 }
 
 #sorter .item {
@@ -112,8 +114,19 @@ body {
 
 }
 
+#sorter .span, #sorter .selector {
+	display: table-cell;
+	width: 50%;
+}
+
+#sorter .selector {
+	position: relative;
+}
+
 #sorter select {
-	float: right;
+	position: absolute;
+	right: 0;
+
 }
 
 .card {
@@ -127,7 +140,11 @@ body {
 .location-and-number, .quantity-and-notes {
 	padding-bottom: 1rem;
 	border-bottom: 1px solid rgba(0,0,0,0.05);
-	margin-bottom: 1rem;
+
+}
+
+.location-and-number {
+		margin-bottom: 1rem;;
 }
 
 .location, .phone-number, .quantity, .notes {
@@ -187,13 +204,14 @@ margin-bottom: 0.75rem;
 	border-radius: 4px;
 	text-transform: uppercase;
 	font-weight: bold;
-	display: inline-block;
+	display: table-cell;
+	margin-top: 5px;
 }
 
 .view-map {
 	background: #3DA1EE;
 	color: white;
-	width: 40%
+	margin-right: 10px;
 
 }
 
@@ -201,13 +219,11 @@ margin-bottom: 0.75rem;
 
 	background: #3A78E2;
 	color:  white;
-	width: 40%;
+	margin-right: 10px;
 
 }
 
 .share-button {
 	color: #3A78E2;
 	background: #EBEBEB;
-	width: 20%;
-
 }
