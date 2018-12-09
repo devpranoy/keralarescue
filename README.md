@@ -1,5 +1,5 @@
 # keralarescue
-Web Portal for the mobile app of kerala-rescue 
+Web Portal for the mobile app of kerala-rescue. This is the flask backend to manage the requests and verify each request from a call center.
 
 ## Setting up
 
@@ -17,6 +17,4 @@ Once this is done, you can start the app by running
 
 sudo python app.py
 
-which should start the server on port 80 which can be accessed by going to:
-
-http://0.0.0.0
+This project is now terminated.
