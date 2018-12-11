@@ -6,11 +6,7 @@ Web Portal for the mobile app of kerala-rescue. This is the flask backend to man
 The app is developed using Flask which is a web development framework written in Python.
 
 ### Mac OS
-Mac comes with Python inbuilt.
-For installing Flask, you need to install Pip.
-Pip installation instructions can be found here: https://github.com/BurntSushi/nfldb/wiki/Python-&-pip-Windows-installation#pip-install
-
-Now you can install Flask using:
+Install flask using pip
 `sudo pip install flask` on the command line.
 
 Once this is done, you can start the app by running
